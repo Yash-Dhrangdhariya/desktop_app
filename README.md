@@ -4,6 +4,6 @@ This is a Flutter app, especially focusing on the macOS Dock and Windows Live Ti
 
 ## 🎬 Preview
 
-![alt Default](preview/app_preview.mov)
+![alt Default](preview/app_preview.mp4)
 
 ## Developed by Yash Dhrangdhariya
