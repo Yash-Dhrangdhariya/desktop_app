@@ -23,9 +23,7 @@ class _DockTileState extends State<DockTile>
     super.initState();
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(
-        milliseconds: 400,
-      ),
+      duration: const Duration(milliseconds: 400),
     );
   }
 
@@ -42,9 +40,7 @@ class _DockTileState extends State<DockTile>
         width: widget.size,
         height: widget.size,
         duration: const Duration(milliseconds: 400),
-        child: const ColoredBox(
-          color: Colors.black,
-        ),
+        child: const ColoredBox(color: Colors.black),
       ),
     );
   }

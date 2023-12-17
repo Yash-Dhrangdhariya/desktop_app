@@ -85,26 +85,19 @@ class _DockBarState extends State<DockBar> {
             children: [
               Positioned.fill(
                 child: ClipRRect(
-                  borderRadius: BorderRadius.circular(18),
+                  borderRadius: const BorderRadius.all(Radius.circular(18)),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(
-                      sigmaX: 5,
-                      sigmaY: 5,
-                    ),
-                    child: const ColoredBox(
-                      color: Colors.white24,
-                    ),
+                    filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+                    child: const ColoredBox(color: Colors.white24),
                   ),
                 ),
               ),
               AnimatedList(
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                padding: EdgeInsets.symmetric(
-                  horizontal: widget.dockPadding,
-                ),
+                padding: EdgeInsets.symmetric(horizontal: widget.dockPadding),
                 initialItemCount: widget.items.length,
-                itemBuilder: (context, index, animation) {
+                itemBuilder: (_, index, animation) {
                   final position = itemsPositions[index];
                   return Center(
                     child: ValueListenableBuilder(
@@ -115,9 +108,7 @@ class _DockBarState extends State<DockBar> {
                         return AnimatedScale(
                           scale: active ? 1.5 : 1,
                           alignment: Alignment.bottomCenter,
-                          duration: const Duration(
-                            milliseconds: 160,
-                          ),
+                          duration: const Duration(milliseconds: 160),
                           // curve: Curves.easeIn,
                           child: Padding(
                             padding: EdgeInsets.only(
@@ -126,11 +117,12 @@ class _DockBarState extends State<DockBar> {
                                   ? 0
                                   : widget.itemsSpacing / 2,
                             ),
-                            child: SizedBox(
-                              height: innerBoxSize,
-                              width: innerBoxSize,
+                            child: SizedBox.square(
+                              dimension: innerBoxSize,
                               child: ClipRRect(
-                                borderRadius: BorderRadius.circular(10),
+                                borderRadius: const BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
                                 child: ColoredBox(
                                   color: Colors.primaries.elementAt(index),
                                   child: Icon(

@@ -1,6 +1,5 @@
-
 class DockIconPosition {
-  DockIconPosition({
+  const DockIconPosition({
     required this.begin,
     required this.end,
   });

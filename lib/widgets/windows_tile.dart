@@ -80,9 +80,8 @@ class _WindowsTileState extends State<WindowsTile>
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: SizedBox(
-        width: widget.size,
-        height: widget.size,
+      child: SizedBox.square(
+        dimension: widget.size,
         child: ColoredBox(
           color: widget.tileColor,
           child: Stack(
@@ -92,14 +91,14 @@ class _WindowsTileState extends State<WindowsTile>
               if (isTileLive)
                 AnimatedBuilder(
                   animation: _controller,
-                  builder: (context, child) {
+                  builder: (_, child) {
                     if (child != null) {
                       return Positioned.fill(
                         top: _transitionAnimation.value,
                         child: child,
                       );
                     }
-                    return const SizedBox();
+                    return const SizedBox.shrink();
                   },
                   child: ColoredBox(
                     color: widget.tileColor,

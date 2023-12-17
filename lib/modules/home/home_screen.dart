@@ -17,14 +17,11 @@ class HomeScreen extends StatelessWidget {
       body: Stack(
         children: [
           Positioned.fill(
-            child: Image.asset(
-              Images.desktopBackground,
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset(Images.desktopBackground, fit: BoxFit.cover),
           ),
           WindowsTile(
-            tileColor: const Color(0xff006DB3),
             size: 200,
+            tileColor: const Color(0xff006DB3),
             primaryChild: const Center(
               child: Icon(
                 Icons.sunny,
@@ -32,6 +29,8 @@ class HomeScreen extends StatelessWidget {
                 size: 80,
               ),
             ),
+            delayInSec: 5,
+            label: 'Weather',
             secondChild: ListView(
               padding: const EdgeInsets.all(10),
               children: const [
@@ -52,8 +51,6 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            label: 'Weather',
-            delayInSec: 5,
           ),
           const Positioned(
             left: 0,
